@@ -4,7 +4,7 @@
     // 本函数每次调用只负责一个轮播图的功能
     // 也就是说只会产生一个轮播,这个函数的作用域只能分配给一个轮播图
     // 所以要在调用本函数的时候请务必将当前轮播图和标签传递过来
-    var slide = function(ele){
+    var slide = function(ele,options){
         // 转为jQuery标签对象
         var $ele = $(ele);
         // 默认的设置选项
@@ -82,6 +82,8 @@
         $(this).each(function(i,ele){
             slide(ele,options)
         })
+        //支持链式调用
+        return this;
     }
 
 })(jQuery)
@@ -103,6 +105,8 @@ $.fn.customFun=function(){
 // }
 // 用法: 
     // $.customFun()
+    
+   
 
 
 
